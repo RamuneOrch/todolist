@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Steak\ Rough";
+  src: url("./font/Steak\ Rough.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todolist {
+  min-width: 500px;
+  height: 100vh;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  font-family: "Steak\ Rough";
+  font-size: 48px;
+  letter-spacing: 20px;
+  margin-bottom: 40px;
+  padding-left: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputWrap {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: solid 1px #132b4d;
+}
+
+.inputWrap:focus-within {
+  border: solid 1px greenyellow;
+}
+
+input {
+  outline: none;
+  color: black;
+  width: 300px;
+}
+
+.listWrap {
+  margin-top: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #132b4d;
+  padding: 15px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  /* transition-delay: 0.3s; */
+  bottom: 0px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.listWrap:hover {
+  background-color: #24497c;
+  bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.listWrapActive {
+  height: 200px;
+}
+
+.listWrap > button {
+  background-color: rgb(35, 96, 207);
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.listIndex {
+  font-weight: 700;
+  font-size: 20px;
 }
